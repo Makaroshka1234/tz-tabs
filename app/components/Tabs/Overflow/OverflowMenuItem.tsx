@@ -1,5 +1,6 @@
 import Link from "next/link";
-import CloseTabBtn from "../Buttons/CloseTabBtn";
+import { CircleX } from "lucide-react";
+import Button from "../../UI/Button";
 import type { ITabData } from "../../../types/tabs";
 import { resolveIcon } from "../../../utils/iconResolver";
 
@@ -25,11 +26,16 @@ export default function OverflowMenuItem({ tab, onClose, onNavigate }: OverflowM
         <span className="text-sm font-medium">{tab.label}</span>
       </Link>
       <div className="absolute right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-        <CloseTabBtn onClick={(e) => {
-          e.stopPropagation();
-          e.preventDefault();
-          onClose(tab.id);
-        }} />
+        <Button 
+          className="hover:bg-tab-close-btn-hover rounded-full p-0.5"
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            onClose(tab.id);
+          }} 
+        >
+          <CircleX size={14} className="text-red-500" />
+        </Button>
       </div>
     </li>
   );

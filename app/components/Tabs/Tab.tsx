@@ -1,8 +1,9 @@
 "use client";
 
 import { forwardRef, useCallback, useRef, useState } from "react";
+import { CircleX } from "lucide-react";
 import Link from "next/link";
-import CloseTabBtn from "./Buttons/CloseTabBtn";
+import Button from "../UI/Button";
 import TabTooltip from "./TabTooltip";
 import { useTabDrag } from "../../hooks/useTabDrag";
 import { useOutsideTouch } from "../../hooks/useOutsideTouch";
@@ -97,7 +98,12 @@ const Tab = forwardRef<HTMLLIElement, ITabProps>(function Tab(
 
         {!isPinned && (
           <div className="flex items-center gap-0.5 ml-1 transition-opacity opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto">
-            <CloseTabBtn onClick={handleClose} />
+            <Button 
+              className="hover:bg-tab-close-btn-hover rounded-full p-0.5"
+              onClick={handleClose} 
+            >
+              <CircleX size={14} className="text-red-500" />
+            </Button>
           </div>
         )}
       </Link>

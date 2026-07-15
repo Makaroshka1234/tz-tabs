@@ -45,23 +45,23 @@ export function useTabsState(initialTabs: ITabData[] = DEFAULT_TABS) {
   const [mounted, setMounted] = useState(false);
   const isDraggingRef = useRef(false);
 
-  // Hydrate
+  
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+   
     setTabs(loadOrder(initialTabs));
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+   
     setPinnedIds(loadPinned());
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+   
     setMounted(true);
   }, []);
 
-  // Persist order
+  
   useEffect(() => {
     if (!mounted) return;
     localStorage.setItem(ORDER_KEY, JSON.stringify(tabs.map((t) => t.id)));
   }, [tabs, mounted]);
 
-  // Persist pinned
+ 
   useEffect(() => {
     if (!mounted) return;
     localStorage.setItem(PINNED_KEY, JSON.stringify([...pinnedIds]));

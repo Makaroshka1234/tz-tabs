@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { ITabData } from "../../../types/tabs";
 import { ChevronDown } from "lucide-react";
+import Button from "../../UI/Button";
 import OverflowMenuItem from "./OverflowMenuItem";
 import OverflowList from "./OverflowList";
 
@@ -35,18 +36,13 @@ function OverflowMenu({ tabs, onClose }: OverflowMenuProps) {
 
   return (
     <div ref={menuRef} className="relative flex-shrink-0 flex flex-col">
-      <button
+      <Button
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`flex items-center justify-center px-2 flex-1
-          transition-colors cursor-pointer
-          ${isOpen 
-            ? "bg-tab-overflow-active text-white" 
-            : `hover:bg-tab-hover ${hasActiveTab ? "text-blue-600" : "text-tab-text-muted"}`
-          }`}
+        className={`px-2 flex-1 ${isOpen ? "bg-tab-overflow-active text-white" : `hover:bg-tab-hover ${hasActiveTab ? "text-blue-600" : "text-tab-text-muted"}`}`}
         title={`${tabs.length} more tab${tabs.length > 1 ? "s" : ""}`}
       >
         <ChevronDown size={20} strokeWidth={2.5} />
-      </button>
+      </Button> 
 
       {isOpen && (
      <OverflowList tabs={tabs} onClose={onClose} setIsOpen={setIsOpen}/>
