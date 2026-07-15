@@ -46,7 +46,6 @@ export default function Tabs({ maxWidth, defaultTabs }: ITabsProps = {}) {
   const { containerRef, setTabRef, visibleTabs, hiddenTabs, recalculate } =
     useTabOverflow(tabs);
 
-  // Recalculate after mount / pin changes (tab widths change)
   useEffect(() => {
     if (mounted) recalculate();
   }, [mounted, pinnedIds, recalculate]);
