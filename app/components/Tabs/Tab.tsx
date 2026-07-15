@@ -5,7 +5,7 @@ import { CircleX } from "lucide-react";
 import Link from "next/link";
 import Button from "../UI/Button";
 import TabTooltip from "./TabTooltip";
-import { useTabDrag } from "../../hooks/useTabDrag";
+import { useTabDrag } from "@/app/hooks/useTabDrag";
 import { useOutsideTouch } from "../../hooks/useOutsideTouch";
 import { resolveIcon } from "../../utils/iconResolver";
 

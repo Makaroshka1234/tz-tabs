@@ -18,7 +18,7 @@ import {
 } from "@dnd-kit/sortable";
 
 import Tab from "./Tab";
-import OverflowMenu from "./Overflow/OverflowMenu";
+import OverflowMenu from "../Overflow/OverflowMenu";
 import { useTabOverflow } from "../../hooks/useTabOverflow";
 import { useTabsState } from "../../hooks/useTabsState";
 import { ITabData } from "@/app/types/tabs";

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { ITabData } from "../../../types/tabs";
+import type { ITabData } from "../../types/tabs";
 import { ChevronDown } from "lucide-react";
-import Button from "../../UI/Button";
+import Button from "../UI/Button";
 import OverflowMenuItem from "./OverflowMenuItem";
 import OverflowList from "./OverflowList";
 

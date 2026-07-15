@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { CircleX } from "lucide-react";
-import Button from "../../UI/Button";
-import type { ITabData } from "../../../types/tabs";
-import { resolveIcon } from "../../../utils/iconResolver";
+import Button from "../UI/Button";
+import type { ITabData } from "../../types/tabs";
+import { resolveIcon } from "../../utils/iconResolver";
 
 interface OverflowMenuItemProps {
   tab: ITabData & { isActive: boolean };
